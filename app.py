@@ -12,8 +12,8 @@ from urllib.parse import quote
 
 size_limit = 1024 * 1024 * 1024 * 999  # 允许的文件大小，默认999GB，相当于无限制了 https://github.com/hunshcn/gh-proxy/issues/8
 
-HOST = '0.0.0.0'  # 监听地址，建议监听本地然后由web服务器反代
-PORT = 5000  # 监听端口
+HOST = '127.0.0.1'  # 监听地址，建议监听本地然后由web服务器反代
+PORT =  50200  # 监听端口
 
 black_list = []
 app = Flask(__name__)
