@@ -1,1 +1,3 @@
-# feproxy
+```shell
+uwsgi --ini start.ini
+```
