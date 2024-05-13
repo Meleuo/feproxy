@@ -114,6 +114,11 @@ def proxy(u, allow_redirects=False):
         headers['content-type'] = 'text/html; charset=UTF-8'
         return Response('server error ' + str(e), status=500, headers=headers)
 
-app.debug = True
 if __name__ == '__main__':
-    app.run(host=HOST, port=PORT)
+    import time
+    while 1:
+        try:
+            app.run(host=HOST, port=PORT, threaded=True)
+        except Exception as e:
+            print(e)
+        time.sleep(2)
