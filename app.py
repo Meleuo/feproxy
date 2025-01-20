@@ -75,7 +75,7 @@ def iter_content(self, chunk_size=1, decode_unicode=False):
 #@app.route('/<path:u>', methods=['GET', 'POST'])
 @app.route('/<path:u>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'])
 def handler(u):
-    print('Url-->',u)
+    #print('Url-->',u)
     u = u if u.startswith('http') else 'https://' + u
     if u.rfind('://', 3, 9) == -1:
         u = u.replace('s:/', 's://', 1)  # uwsgi会将//传递为/
@@ -86,8 +86,8 @@ def handler(u):
     
     
     
-    print(request.data)
-    print(request.args)
+    #print(request.data)
+    #print(request.args)
 
     for i in black_list:
         if i in u:
