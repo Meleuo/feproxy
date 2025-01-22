@@ -114,7 +114,8 @@ def handler(u):
         return Response(generate(), headers=headers, status=r.status_code)
     except Exception as e:
         headers['content-type'] = 'text/html; charset=UTF-8'
-        return Response('server error ' + str(e), status=500, headers=headers)
+        return Response('Invalid input.', status=403)
+        #return Response('server error ' + str(e), status=500, headers=headers)
 
 if __name__ == '__main__':
     import time
